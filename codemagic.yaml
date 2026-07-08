@@ -5,6 +5,11 @@ workflows:
     environment:
       flutter: stable
     scripts:
+      - name: Create Flutter project
+        script: |
+          flutter create --project-name=bd .
+          rm -rf lib/
+          cp -r ../lib .
       - name: Get packages
         script: flutter pub get
       - name: Build APK
